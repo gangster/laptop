@@ -138,7 +138,7 @@ install_or_update_homebrew() {
 
 install_latest_ruby() {
   append_to_zshrc 'eval "$(rbenv init - zsh --no-rehash)"' 1
-  ruby_version="2.2.2"
+  ruby_version="2.3.0"
   eval "$(rbenv init - zsh)"
 
   if ! rbenv versions | grep -Fq "$ruby_version"; then
@@ -229,7 +229,7 @@ brew_install_or_upgrade 'imagemagick'
 brew_install_or_upgrade 'qt'
 brew_install_or_upgrade 'hub'
 brew_install_or_upgrade 'n'
-n 0.12 && n stable
+n 5.9.0 && n stable
 brew_tap 'caskroom/cask'
 brew_install_or_upgrade 'caskroom/cask/brew-cask'
 brew_install_or_upgrade 'rbenv'
@@ -265,9 +265,6 @@ install_shift_it
 install_elasticsearch
 install_latest_ruby
 install_vim_config
-
-# Install LastPass
-open /opt/homebrew-cask/Caskroom/lastpass/latest/LastPass\ Installer.app
 
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 0.02
